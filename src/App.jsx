@@ -60,7 +60,7 @@ class App extends React.Component{
 
             <h1> ToDo Application</h1>
                 <div>
-                        <TextField id="outlined-basic" label="Enter Your Text" variant="outlined"  type="text"  value={this.state.value} onChange={(e)=>{this.setState({
+                        <TextField className="text" id="outlined-basic" label="Enter Your Text" variant="outlined"  type="text"  value={this.state.value} onChange={(e)=>{this.setState({
                     value: e.target.value
                 })}} />
 
@@ -69,7 +69,7 @@ class App extends React.Component{
 
                 <List component="nav" aria-label="mailbox folders" >{
                     todo.map((item, index)=> {
-                        return( <ListItem className="l2" divider><ListItemText className="l1" key={index}>{item.edit ?  <TextField  placeholder={item.task} onChange={(e)=>this.setState({value: e.target.value})} type='text' /> : item.task}
+                        return( <ListItem className="l2" divider><ListItemText className="l1" key={index}>{item.edit ?  <TextField  className="text" placeholder={item.task} onChange={(e)=>this.setState({value: e.target.value})} type='text' /> : item.task}
                         <Fab className="fa" color={"primary"} aria-label="edit" onClick={() => this.editTodo(index)}> <Edit/></Fab>
                                 <Fab color="secondary" onClick={()=>this.deleteTodo(index)}><Delete/></Fab>
                         </ListItemText></ListItem>)
